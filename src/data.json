@@ -1,0 +1,177 @@
+  {
+    "products": [
+        {
+        "_id": "Product1",     
+        "name": "Aaron",
+        "img": "/img/aaron.jpg",
+        "description": "this product is from Brazil and best quality",
+        "section": "Granite",
+        "price": 45
+    },
+    {
+      "_id": "Product2",
+      "name": "Andre",
+      "img": "/img/andre.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Marble",
+      "price": 40
+    },
+    {
+      "_id": "Product3",
+      "name": "Andrew",
+      "img": "/img/andrew.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Quartz",
+      "price": 50
+    },
+    {
+      "_id": "Product4",
+      "name": "Annie",
+      "img": "/img/annie.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Other",
+      "price": 55
+    },
+    {
+      "_id": "Product5",
+      "name": "Background",
+      "img": "/img/background.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Granite",
+      "price": 52
+    },
+    {
+      "_id": "Product6",
+      "name": "Binh",
+      "img": "/img/binh.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Granite",
+      "price": 48
+    },
+    {
+      "_id": "Product7",
+      "name": "Black",
+      "img": "/img/black.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Quartz",
+      "price": 55
+    },
+    {
+      "_id": "Product8",
+      "name": "Chay",
+      "img": "/img/chay.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Granite",
+      "price": 65
+    },
+    {
+      "_id": "Product9",
+      "name": "David",
+      "img": "/img/david.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Other",
+      "price": 80
+    },
+    {
+      "_id": "Product10",
+      "name": "Dinesh",
+      "img": "/img/dinesh.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Marble",
+      "price": 85
+    },
+    {
+      "_id": "Product11",
+      "name": "Gareth",
+      "img": "/img/gareth.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Quartz",
+      "price": 70
+    },
+    {
+      "_id": "Product12",
+      "name": "Jack",
+      "img": "/img/jack.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Granite",
+      "price": 60
+    },
+    {
+      "_id": "Product13",
+      "name": "luke",
+      "img": "/img/luke.jpg",     
+      "description": "this product is from Brazil and best quality",
+      "section": "Other",
+      "price": 65
+    },
+    {
+      "_id": "Product14",
+      "name": "Marci",
+      "img": "/img/marci.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Granite",
+      "price": 88
+    },
+    {
+      "_id": "Product15",
+      "name": "Max",
+      "img": "/img/max.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Quartz",
+      "price": 45
+    },
+    {
+      "_id": "Product16",
+      "name": "Omar",
+      "img": "/img/omar.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Granite",
+      "price": 40
+    },
+    {
+      "_id": "Product17",
+      "name": "Pineapple",
+      "img": "/img/pineapple.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Marble",
+      "price": 55
+    },
+    {
+      "_id": "Product18",
+      "name": "Scott",
+      "img": "/img/scott.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Granite",
+      "price": 60
+    },
+    {
+      "_id": "Product19",
+      "name": "Shahadat",
+      "img": "/img/shahadat.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Other",
+      "price": 75
+    },
+    {
+      "_id": "Product20",
+      "name": "Usgs",
+      "img": "/img/usgs.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Marble",
+      "price": 45
+    },
+    {
+      "_id": "Product21",
+      "name": "Vishnu",
+      "img": "img/vishnu.jpg",
+      "description": "this product is from Brazil and best quality",
+      "section": "Other",
+      "price": 55
+    }          
+    ]
+}
+
+
+
+
+
