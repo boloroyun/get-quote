@@ -3,16 +3,39 @@ import React from 'react';
 import data from "./data.json";
 import Products from "./components/Products";
 import Filter from "./components/Filter";
+import WishList from './components/WishList';
 
 class App extends React.Component {
   constructor(props){
     super();
     this.state = {
       products: data.products,
+      wishListItems: [],
       section: "",
       sort: "",
     };
   }
+removeFromWishList = (product) => {
+  const wishListItems = this.state.wishListItems.slice();
+  this.setState({
+    wishListItems: wishListItems.filter((x) => x._id !== product._id),
+  });
+};
+
+  addToWishList =(product) => {
+    const wishListItems = this.state.wishListItems.slice();
+    let alreadyInWishList = false;
+    wishListItems.forEach((item) => {
+      if(item._id === product._id) {
+        item.count++;
+        alreadyInWishList = true;
+      }
+    });
+    if(!alreadyInWishList) {
+      wishListItems.push({...product, count: 1});
+    }
+    this.setState({ wishListItems});
+  };
 
   sortProducts = (event) => {
     //imp
@@ -68,12 +91,19 @@ class App extends React.Component {
               sortProducts={this.sortProducts}
 
             ></Filter>
-            <Products products={this.state.products}></Products>
+            <Products products={this.state.products}
+            addToWishList={this.addToWishList}
+            ></Products>
           </div>
-          <div className="sidebar">Cart Items</div>
-        </div>
-      </main>
-      <footer>All right is reserved.</footer>
+          <div className="sidebar">
+            <WishList 
+            wishListItems={this.state.wishListItems}
+            removeFromWishList={this.removeFromWishList}
+            />
+    </div>
+    </div>
+    </main>
+    <footer>All right is reserved</footer>
     </div>
   );
 }
