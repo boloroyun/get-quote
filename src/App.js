@@ -10,16 +10,26 @@ class App extends React.Component {
     super();
     this.state = {
       products: data.products,
-      wishListItems: [],
+      wishListItems: localStorage.getItem("wishListItems")
+      ? JSON.parse(localStorage.getItem("wishListItems"))
+      : [],
       section: "",
       sort: "",
     };
   }
+
+createOrder = (order) => {
+  alert("Need to save order for " + order.name);
+};
+
 removeFromWishList = (product) => {
   const wishListItems = this.state.wishListItems.slice();
   this.setState({
     wishListItems: wishListItems.filter((x) => x._id !== product._id),
   });
+  localStorage.setItem("wishListItems", 
+  JSON.stringify(wishListItems.filter((x) => x._id !== product._id))
+  );
 };
 
   addToWishList =(product) => {
@@ -35,7 +45,10 @@ removeFromWishList = (product) => {
       wishListItems.push({...product, count: 1});
     }
     this.setState({ wishListItems});
+    localStorage.setItem("wishListItems", JSON.stringify(wishListItems));
   };
+
+
 
   sortProducts = (event) => {
     //imp
@@ -99,6 +112,7 @@ removeFromWishList = (product) => {
             <WishList 
             wishListItems={this.state.wishListItems}
             removeFromWishList={this.removeFromWishList}
+            createOrder={this.createOrder}
             />
     </div>
     </div>
