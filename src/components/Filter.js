@@ -14,7 +14,7 @@ export default class Filter extends Component {
               </select>
             </div>
             <div className="filter-section">
-              Filter by type of stone{" "}
+              Filter by type of stone{" "}  
               <select value={this.props.section} onChange={this.props.filterProducts}>
                 <option value="">ALL</option>
                 <option value="Granite">Granite</option>

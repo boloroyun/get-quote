@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import formatCurrency from "../util";
+import Fade from "react-reveal/Fade";
 
 export default class WishList extends Component {
     constructor(props) {
@@ -8,6 +8,7 @@ export default class WishList extends Component {
             name: "",
             email: "",
             address: "",
+            projectDetails: "",
             showCheckout: false
         };
     }
@@ -21,6 +22,7 @@ export default class WishList extends Component {
           name: this.state.name,
           email: this.state.email,
           address: this.state.address,
+          projectDetails: this.state.projectDetails,
           wishListItems: this.props.wishListItems,
         };
         this.props.createOrder(order);
@@ -41,27 +43,39 @@ export default class WishList extends Component {
             )}
             <div>
               <div className="wishlist">
-                <ul className="wishlist-items">
-                  {wishListItems.map((item) => (
-                    <li key={item._id}>
-                      <div>
-                        <img src={item.img} alt={item.name}></img>
-                      </div>
-                      <div>
-                        <div>{item.name}</div>
-                        <div className="right">
-                          {formatCurrency(item.price)} * {item.count}{" "}
-                          <button
-                            className="button"
-                            onClick={() => this.props.removeFromWishList(item)}
-                          >
-                            Remove
-                          </button>
+                <Fade left cascade>
+                  <ul className="wishlist-items">
+                    {wishListItems.map((item) => (
+                      <li key={item._id}>
+                        <div>
+                          <img src={item.img} alt={item.name}></img>
                         </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                        <div>
+                          <div>{item.name}</div>
+                          <label>Insert your project size!</label>
+                          <input
+                            className="sqFoot"
+                            name="sqFoot"
+                            type="number"
+                            placeholder="sq.foot"
+                            onChange={this.handleInput}
+                          ></input>
+
+                          <div className="right">
+                            <button
+                              className="button"
+                              onClick={() =>
+                                this.props.removeFromWishList(item)
+                              }
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </Fade>
               </div>
               {wishListItems.length !== 0 && (
                 <div>
@@ -72,46 +86,59 @@ export default class WishList extends Component {
                       }}
                       className="button primary"
                     >
-                      Proceed   
+                      Proceed
                     </button>
                   </div>
                   {this.state.showCheckout && (
-                    <div className="wishlist">
-                      <form onSubmit={this.createOrder}>
-                        <ul className="form-container">
-                          <li>
-                            <label>Email</label>
-                            <input
-                              name="email"
-                              type="email"
-                              required
-                              onChange={this.handleInput}
-                            ></input>
-                          </li>
-                          <li>
-                            <label>Name</label>
-                            <input
-                              name="name"
-                              type="text"
-                              required
-                              onChange={this.handleInput}
-                            ></input>
-                          </li>
-                          <li>
-                            <label>Address</label>
-                            <input
-                              name="address"
-                              type="text"
-                              required
-                              onChange={this.handleInput}
-                            ></input>
-                          </li>
-                          <li>
-                              <button className="button primary" type="submit">Get Quote</button>
-                          </li>
-                        </ul>
-                      </form>
-                    </div>
+                    <Fade right cascade>
+                      <div className="wishlist">
+                        <form onSubmit={this.createOrder}>
+                          <ul className="form-container">
+                            <li>
+                              <label>Email</label>
+                              <input
+                                name="email"
+                                type="email"
+                                required
+                                onChange={this.handleInput}
+                              ></input>
+                            </li>
+                            <li>
+                              <label>Name</label>
+                              <input
+                                name="name"
+                                type="text"
+                                required
+                                onChange={this.handleInput}
+                              ></input>
+                            </li>
+                            <li>
+                              <label>Address</label>
+                              <input
+                                name="address"
+                                type="text"
+                                required
+                                onChange={this.handleInput}
+                              ></input>
+                            </li>
+                            <li>
+                              <label>Project Details</label>
+                              <input
+                                name="projectDetails"
+                                type="text"
+                                required
+                                onChange={this.handleInput}
+                              ></input>
+                            </li>
+                            <li>
+                              <button className="button primary" type="submit">
+                                Get Quote
+                              </button>
+                            </li>
+                          </ul>
+                        </form>
+                      </div>
+                    </Fade>
                   )}
                 </div>
               )}
