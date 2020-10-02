@@ -32,17 +32,17 @@ removeFromWishList = (product) => {
   );
 };
 
-  addToWishList =(product) => {
+  addToWishList = (product) => {
     const wishListItems = this.state.wishListItems.slice();
     let alreadyInWishList = false;
     wishListItems.forEach((item) => {
-      if(item._id === product._id) {
+    if (item._id === product._id) {
         item.count++;
         alreadyInWishList = true;
       }
     });
-    if(!alreadyInWishList) {
-      wishListItems.push({...product, count: 1});
+    if (!alreadyInWishList) {
+      wishListItems.push({ ...product, count: 1 });
     }
     this.setState({ wishListItems});
     localStorage.setItem("wishListItems", JSON.stringify(wishListItems));

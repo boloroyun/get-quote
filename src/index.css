@@ -11,7 +11,7 @@ body,
   margin: 0;
 }
 
-body, input, select, textarea{
+body, input, select, button, textarea{
   font-size: 1.6rem;
   font-family: Montserrat, Helvetica, Arial, Helvetica, sans-serif;
 }
@@ -32,12 +32,12 @@ text-decoration: none;
 }
 
 a:hover {
-  color: orangered;
+  color: #47d685;
 }
 
 header{
 grid-area: header;
-background-color: black;
+background-color: #145A32;
 color: white;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@ main{
 
 footer{
   grid-area: footer;
-  background-color: black;
+  background-color: #145A32;
   color: white;
   display: flex;
   justify-content: center;
@@ -87,9 +87,12 @@ footer{
   list-style-type: none;
 }
 
+
+
+
 .products li{
   flex: 0 1 29rem;
-  height: 33rem;
+  height: 100%;
   padding: 1rem;
 }
 
@@ -98,11 +101,27 @@ footer{
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  filter: contrast(85%);
+  box-shadow: 0px 0px 2px 0px grey;
+  margin: 10px;
+  transition-property: box-shadow margin-top filter;
+  transition-duration: 0.1s;
+}
+  .product:hover{
+  cursor: pointer;
+  filter: contrast(100%);
+  box-shadow: 0px 0px 10px 0px grey;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 .product img{
-  max-height: 35rem;
-  max-width: 35rem; 
+  max-height: 100%;
+  max-width: 100%; 
+}
+
+.product a{
+  text-align: center;
 }
 
 .product-price{
@@ -120,8 +139,9 @@ flex: 1;
 }
 
 .button{
-  padding: 1rem;
-  border: 0.1rem #c0c0c0 solid;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  border: 0.01rem #c0c0c0 solid;
   background-color: #f0f0f0;
   cursor: pointer;
 }
@@ -129,8 +149,9 @@ flex: 1;
   border: 0.1rem #808080 solid;
 }
 
-.button.primary {background-color: #ffc000;
-
+.button.primary {
+  background-color:#145A32;
+  color: aliceblue;
 }
 
 /*Filter*/
@@ -219,6 +240,36 @@ form {
 
 input {
   padding: 1rem;
-  border: 0.1rem #c0c0c0 solid;
+  border: 0.1rem #c0c0c0 solid; 
 }
 
+/*Product-Details*/
+
+.product-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+}
+
+.product-details img{
+  max-height: 100%;
+  max-width: 140vh;
+  margin: 0 auto;
+}
+
+.product-details-description{
+  flex: 1 1;
+  margin: 1rem;
+}
+
+.close-modal{
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 1000;
+}
+
+.sqFoot{
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
