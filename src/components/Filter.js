@@ -1,29 +1,65 @@
 import React, { Component } from 'react'
+import {connect} from "react-redux";
+import {filterProducts, sortProducts} from '../actions/productActions'
 
-export default class Filter extends Component {
-    render() {
-        return (
-          <div className="filter">
-            <div className="filter-result">{this.props.count} Products</div>
-            <div className="filter-sort">
-              Order by value{" "}
-              <select value={this.props.sort} onChange={this.props.sortProducts}>
-                <option>Latest</option>
-                <option value="lowest">Lowest</option>                  
-                <option value="highest">Highest</option>
-              </select>
-            </div>
-            <div className="filter-section">
-              Filter by type of stone{" "}  
-              <select value={this.props.section} onChange={this.props.filterProducts}>
-                <option value="">ALL</option>
-                <option value="Granite">Granite</option>
-                <option value="Marble">Marble</option>
-                <option value="Quartz">Quartz</option>
-                <option value="Soapstone">Soapstone</option>
-              </select>
-            </div>
-          </div>
-        );
-    }
+class Filter extends Component {
+  render() {
+    return !this.props.filteredProducts ? (
+      <div>Loading...</div>
+    ) : (
+      <div className="filter">
+        <div className="filter-result">
+          {this.props.filteredProducts.length} Products
+        </div>
+        <div className="filter-sort">
+          Order by value{" "}
+          <select
+            value={this.props.sort}
+            onChange={(e) =>
+              this.props.sortProducts(
+                this.props.filteredProducts,
+                e.target.value
+              )
+            }
+          >
+            <option value="latest">Latest</option>
+            <option value="lowest">Lowest</option>
+            <option value="highest">Highest</option>
+          </select>
+        </div>
+        <div className="filter-section">
+          Filter by type of stone{" "}
+          <select
+            value={this.props.section}
+            onChange={(e) =>
+              this.props.filterProducts(
+                this.props.products,
+                e.target.value
+              )
+            }
+          >
+            <option value="">ALL</option>
+            <option value="Granite">Granite</option>
+            <option value="Marble">Marble</option>
+            <option value="Quartz">Quartz</option>
+            <option value="Soapstone">Soapstone</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+    );
+  }
 }
+
+export default connect(
+  (state) => ({
+    section: state.products.section,
+    sort: state.products.sort,
+    products: state.products.items,
+    filteredProducts: state.products.filteredItems,
+  }),
+  {
+    filterProducts,
+    sortProducts,
+  }
+)(Filter);
