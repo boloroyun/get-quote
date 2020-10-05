@@ -4,6 +4,8 @@ import data from "./data.json";
 import Products from "./components/Products";
 import Filter from "./components/Filter";
 import WishList from './components/WishList';
+import store from './store';
+import { Provider } from 'react-redux';
 
 class App extends React.Component {
   constructor(props){
@@ -89,36 +91,38 @@ removeFromWishList = (product) => {
   };
   render(){
   return (
-    <div className="grid-container">
-      <header>
-        <a href="/">Countertop Get Quote</a>
-      </header>
-      <main>
-        <div className="content">
-          <div className="main">
-            <Filter
-              count={this.state.products.length}
-              section={this.state.section}
-              sort={this.state.sort}
-              filterProducts={this.filterProducts}
-              sortProducts={this.sortProducts}
-
-            ></Filter>
-            <Products products={this.state.products}
-            addToWishList={this.addToWishList}
-            ></Products>
+    <Provider store={store}>
+      <div className="grid-container">
+        <header>
+          <a href="/">Countertop Get Quote</a>
+        </header>
+        <main>
+          <div className="content">
+            <div className="main">
+              <Filter
+                count={this.state.products.length}
+                section={this.state.section}
+                sort={this.state.sort}
+                filterProducts={this.filterProducts}
+                sortProducts={this.sortProducts}
+              ></Filter>
+              <Products
+                products={this.state.products}
+                addToWishList={this.addToWishList}
+              ></Products>
+            </div>
+            <div className="sidebar">
+              <WishList
+                wishListItems={this.state.wishListItems}
+                removeFromWishList={this.removeFromWishList}
+                createOrder={this.createOrder}
+              />
+            </div>
           </div>
-          <div className="sidebar">
-            <WishList 
-            wishListItems={this.state.wishListItems}
-            removeFromWishList={this.removeFromWishList}
-            createOrder={this.createOrder}
-            />
-    </div>
-    </div>
-    </main>
-    <footer>All right is reserved</footer>
-    </div>
+        </main>
+        <footer>All right is reserved</footer>
+      </div>
+    </Provider>
   );
 }
 }
