@@ -1,6 +1,5 @@
 // feature 1
 import React from 'react';
-import data from "./data.json";
 import Products from "./components/Products";
 import Filter from "./components/Filter";
 import WishList from './components/WishList';
@@ -11,12 +10,9 @@ class App extends React.Component {
   constructor(props){
     super();
     this.state = {
-      products: data.products,
       wishListItems: localStorage.getItem("wishListItems")
       ? JSON.parse(localStorage.getItem("wishListItems"))
       : [],
-      section: "",
-      sort: "",
     };
   }
 
@@ -52,43 +48,7 @@ removeFromWishList = (product) => {
 
 
 
-  sortProducts = (event) => {
-    //imp
-    const sort = event.target.value;
-    console.log(event.target.value);
-    this.setState((state) => ({
-      sort: sort,
-      products: this.state.products.slice().sort((a,b) => 
-      sort === "lowest"
-      ? a.price > b.price 
-      ? 1
-      : -1
-      : sort === "highest"
-      ? a.price < b.price
-      ? 1
-      : -1
-      : a._id < b._id
-      ? 1
-      : -1
-),
-    }));
-  };
-
-  filterProducts = (event) => {
-    //imp
-    console.log
-    (event.target.value);
-    if(event.target.value === ""){
-      this.setState({section: event.target.value, products: data.products});
-    } else {
-      this.setState({
-        section: event.target.value,
-        products: data.products.filter(
-          (product) => product.section.indexOf(event.target.value) >= 0
-        ),
-      });
-    };
-  };
+  
   render(){
   return (
     <Provider store={store}>
@@ -99,17 +59,8 @@ removeFromWishList = (product) => {
         <main>
           <div className="content">
             <div className="main">
-              <Filter
-                count={this.state.products.length}
-                section={this.state.section}
-                sort={this.state.sort}
-                filterProducts={this.filterProducts}
-                sortProducts={this.sortProducts}
-              ></Filter>
-              <Products
-                products={this.state.products}
-                addToWishList={this.addToWishList}
-              ></Products>
+              <Filter></Filter>
+              <Products addToWishList={this.addToWishList}></Products>
             </div>
             <div className="sidebar">
               <WishList
