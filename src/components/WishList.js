@@ -1,25 +1,27 @@
 import React, { Component } from 'react'
 import Fade from "react-reveal/Fade";
+import { connect } from "react-redux";
+import { removeFromWishList } from "../actions/wishListActions";
 
-export default class WishList extends Component {
+class WishList extends Component {
     constructor(props) {
         super(props);
-        this.state={
-            name: "",
+        this.state= {
+            flname: "",
             email: "",
             address: "",
             projectDetails: "",
-            showCheckout: false
+            showCheckout: false,
         };
     }
     handleInput = (e) => {
-        this.setState({[e.target.name]: e.target.value });
+        this.setState({ [e.target.name]: e.target.value });
     };
 
     createOrder = (e) => {
         e.preventDefault();
         const order = {
-          name: this.state.name,
+          flname: this.state.flname,
           email: this.state.email,
           address: this.state.address,
           projectDetails: this.state.projectDetails,
@@ -106,7 +108,7 @@ export default class WishList extends Component {
                             <li>
                               <label>Name</label>
                               <input
-                                name="name"
+                                name="flname"
                                 type="text"
                                 required
                                 onChange={this.handleInput}
@@ -147,3 +149,10 @@ export default class WishList extends Component {
         );
     }
 }
+
+export default connect(
+  (state) => ({
+  wishListItems: state.wishList.wishListItems,
+}),
+{removeFromWishList}
+)(WishList);
