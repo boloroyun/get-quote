@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
+import Modal from "react-modal";
+import Zoom from "react-reveal/Zoom";
 import { removeFromWishList } from "../actions/wishListActions";
+import { createOrder, clearOrder } from "../actions/orderActions";
 
 class WishList extends Component {
     constructor(props) {
@@ -29,9 +32,11 @@ class WishList extends Component {
         };
         this.props.createOrder(order);
     };
-
+closeModal = () => {
+  this.props.clearOrder();
+}
     render() {
-        const { wishListItems } = this.props;
+        const { wishListItems, order } = this.props;
         return (
           <div>
             {wishListItems.length === 0 ? (
@@ -43,6 +48,54 @@ class WishList extends Component {
                 You have {wishListItems.length} items in your Wish List{" "}
               </div>
             )}
+
+            {order && (
+              <Modal isOpen={true} onRequestClose={this.closeModal}>
+                <Zoom>
+                  <button className="close-modal" onClick={this.closeModal}>
+                    x
+                  </button>
+                  <div className="order-details">
+                    <h3 className="success-message">
+                      Your request has been sent
+                    </h3>
+                    <h2>Order {order._id}</h2>
+                    <ul>
+                      <li>
+                        <div>Name:</div>
+                        <div>{order.flname}</div>
+                      </li>
+                      <li>
+                        <div>Email:</div>
+                        <div>{order.email}</div>
+                      </li>
+                      <li>
+                        <div>Address:</div>
+                        <div>{order.address}</div>
+                      </li>
+                      <li>
+                        <div>Date:</div>
+                        <div>{order.createdAt}</div>
+                      </li>
+
+                      <li>
+                        <div>Project Details:</div>
+                        <div>{order.projectDetails}</div>
+                      </li>
+                      <li>
+                        <div>Wish List Items:</div>
+                        <div>
+                          {order.wishListItems.map((x) => (
+                            <div>{x.name}</div>
+                          ))}
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </Zoom>
+              </Modal>
+            )}
+
             <div>
               <div className="wishlist">
                 <Fade left cascade>
@@ -54,14 +107,6 @@ class WishList extends Component {
                         </div>
                         <div>
                           <div>{item.name}</div>
-                          <label>Insert your project size!</label>
-                          <input
-                            className="sqFoot"
-                            name="sqFoot"
-                            type="number"
-                            placeholder="sq.foot"
-                            onChange={this.handleInput}
-                          ></input>
 
                           <div className="right">
                             <button
@@ -125,12 +170,14 @@ class WishList extends Component {
                             </li>
                             <li>
                               <label>Project Details</label>
-                              <input
+                              <textarea
+                                className="project-details"
                                 name="projectDetails"
                                 type="text"
                                 required
                                 onChange={this.handleInput}
-                              ></input>
+                                placeholder="Describe your project size and especial request."
+                              ></textarea>
                             </li>
                             <li>
                               <button className="button primary" type="submit">
@@ -152,7 +199,8 @@ class WishList extends Component {
 
 export default connect(
   (state) => ({
+    order: state.order.order,
   wishListItems: state.wishList.wishListItems,
 }),
-{removeFromWishList}
+{removeFromWishList, createOrder, clearOrder }
 )(WishList);

@@ -39,6 +39,45 @@ app.delete("/api/products/:id", async(req, res) => {
     res.send(deletedProduct);    
 });
 
+const Order = mongoose.model(
+  "order",
+  new mongoose.Schema({
+    _id: {
+      type: String,
+      default: shortid.generate,
+    },
+    email: String,
+    flname: String,
+    address: String,
+    projectDetails: String,
+    wishListItems: [
+      {
+        _id: String,
+        name: String,
+        count: Number,
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+  )
+  );
+
+  app.post ("/api/orders", async(req, res) => {
+    if (
+      !req.body.flname ||
+      !req.body.email ||
+      !req.body.address ||
+      !req.body.projectDetails ||
+      !req.body.wishListItems 
+    ) {
+      return res.send({ message: "Data is required."});
+    }
+    const order = await Order(req.body).save();
+    res.send(order);
+  });
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("serve at http://localhost:5000"));
 
