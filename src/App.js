@@ -1,34 +1,29 @@
 import React from 'react';
-import Products from "./components/Products";
-import Filter from "./components/Filter";
-import WishList from './components/WishList';
-import store from './store';
-import { Provider } from 'react-redux';
-
-
+import "./App.css";
+import Navbar from './components/Navbar/Navbar';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import HomePage from './components/Pages/HomePage';
+import ProductPage from "./components/Pages/ProductPage";
+import ServicePage from "./components/Pages/ServicePage";
+import SignupPage from "./components/Pages/SignupPage";
+import Projects from "./components/Project/Projects"
 
 class App extends React.Component {  
+
   render() {
   return (
-    <Provider store={store}>
-      <div className="grid-container">
-        <header>
-          <a href="/">Countertop Get Quote</a>
-        </header>
-        <main>
-          <div className="content">
-            <div className="main">
-              <Filter></Filter>
-              <Products></Products>
-            </div>
-            <div className="sidebar">
-              <WishList />
-            </div>
-          </div>
-        </main>
-        <footer>All right is reserved</footer>
-      </div>
-    </Provider>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/products" component={ProductPage} />
+          <Route path="/services" component={ServicePage} />
+          <Route path="/sign-up" component={SignupPage} />
+          <Route path="/projects" component={Projects} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 }

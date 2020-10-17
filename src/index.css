@@ -20,8 +20,7 @@ body, input, select, button, textarea{
 display: grid;
 grid-template-areas: 
 "header"
-"main"
-"footer";
+"main";
  grid-template-rows: 5rem 1fr 5rem;
  grid-template-columns: 1fr;
  height: 100%;
@@ -52,14 +51,6 @@ main{
   grid-area: main;
 }
 
-footer{
-  grid-area: footer;
-  background-color: #145A32;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .content{
   display: flex;
@@ -120,6 +111,7 @@ footer{
 
 .product a{
   text-align: center;
+  color: #242424;
 }
 
 .product-price{
@@ -148,7 +140,7 @@ flex: 1;
 }
 
 .button.primary {
-  background-color:#145A32;
+  background-color:#2C302E;
   color: aliceblue;
 }
 
@@ -308,3 +300,4 @@ padding: 10px;
 .success-message{
   color: green;
 }
+
