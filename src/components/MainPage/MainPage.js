@@ -1,37 +1,34 @@
-import React from "react";
+import React, {Component} from "react";
 import "../../App.css";
 import { Button } from "../Button/Button";
-import Navbar from "../Navbar/Navbar";
 import "./MainPage.css";
-import Products from "../Products";
-import Projects from "../Project/Projects";
+import { Link } from "react-router-dom";
 
-function MainPage() {
-  return (
-    <div className="main-container">
+
+export default class MainPage extends Component {
+  render() {
+  return <div className="main-container">
       <video src="./marble.mp4" autoPlay loop muted />
       <h1> Your Home Beauty </h1>
       <p>Choose your favorite stones and Get Quote</p>
       <div className="main-btns">
         <Button
-          href={Products}
           className="btns"
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          Get Quote
+          <Link to="/products">Get Quote</Link>
         </Button>
         <Button
-          href="{Projects}"
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
-          Watch Projects<i className="far fa-play-circle" />
+          <Link to="/projects">Watch Projects</Link>
+          <i className="far fa-play-circle" />
         </Button>
       </div>
     </div>
-  );
+  }
 }
 
-export default MainPage;
