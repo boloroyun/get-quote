@@ -23,6 +23,7 @@ video {
     font-size: 100px;
     margin-top: -100px;
     text-align: center;
+    text-shadow: 3px 3px green;
 }
 
 .main-container > p {
@@ -43,6 +44,13 @@ video {
 
 .fa-play-circle {
     margin-left: 4px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 1px 1px black;
 }
 
 @media screen and (max-width: 960px){

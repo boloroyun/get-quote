@@ -21,8 +21,24 @@ const Projects = () => {
                 label="Stone name and type"
                 path="/projects"
               />
-            </ul>
-            <ul className="projects-items">
+              <ProjectItem
+                src="project-img/bath3.jpg"
+                text="Bathroom countertop"
+                label="Stone name and type"
+                path="/projects"
+              />
+              <ProjectItem
+                src="project-img/bath2.jpg"
+                text="Bathroom countertop"
+                label="Stone name and type"
+                path="/projects"
+              />
+              <ProjectItem
+                src="project-img/bath3.jpg"
+                text="Bathroom countertop"
+                label="Stone name and type"
+                path="/projects"
+              />
               <ProjectItem
                 src="project-img/bath3.jpg"
                 text="Bathroom countertop"
