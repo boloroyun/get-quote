@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function ServicePage() {
-  return <h1 className="services">Services</h1>;
+export default class ServicePage extends Component {
+  render() {
+    return <div>ServicePage</div>;
+  }
 }

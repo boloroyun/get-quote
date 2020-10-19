@@ -1,29 +1,31 @@
 import React from 'react';
 import "./App.css";
 import Navbar from './components/Navbar/Navbar';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import HomePage from './components/Pages/HomePage';
 import ProductPage from "./components/Pages/ProductPage";
 import ServicePage from "./components/Pages/ServicePage";
-import SignupPage from "./components/Pages/SignupPage";
+import AdminPage from "./components/Pages/AdminPage";
 import Projects from "./components/Project/Projects"
+import store from "./store";
+import { Provider } from "react-redux";
 
 class App extends React.Component {  
 
   render() {
   return (
-    <>
-      <Router>
+    <Provider store={store}>
+      <BrowserRouter>
         <Navbar />
-        <Switch>
+        <Switch>  
           <Route path="/" exact component={HomePage} />
           <Route path="/products" component={ProductPage} />
           <Route path="/services" component={ServicePage} />
-          <Route path="/sign-up" component={SignupPage} />
+          <Route path="/admin" component={AdminPage} />
           <Route path="/projects" component={Projects} />
         </Switch>
-      </Router>
-    </>
+      </BrowserRouter>
+    </Provider>
   );
 }
 }

@@ -6,4 +6,5 @@ export const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
 export const CREATE_ORDER = "CREATE_ORDER";
 export const CLEAR_ORDER = "CLEAR_ORDER";
 export const CLEAR_WISHLIST = "CLEAR_WISHLIST";
+export const FETCH_ORDERS = "FETCH_ORDERS";
 
