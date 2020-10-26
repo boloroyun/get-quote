@@ -1,5 +1,4 @@
-import React from 'react';
-import "./App.css";
+import React, {Component} from 'react'
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import HomePage from './components/Pages/HomePage';
@@ -10,13 +9,13 @@ import Projects from "./components/Project/Projects"
 import store from "./store";
 import { Provider } from "react-redux";
 
-class App extends React.Component {  
+class App extends Component {  
 
   render() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Navbar />
+      <Navbar/>
         <Switch>  
           <Route path="/" exact component={HomePage} />
           <Route path="/products" component={ProductPage} />

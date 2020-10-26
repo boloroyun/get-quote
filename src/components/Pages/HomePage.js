@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import MainPage from '../MainPage/MainPage';
-import Projects from '../Project/Projects';
 import Footer from '../Footer/Footer';
+import Project from '../Project/Projects';
 
 export default class HomePage extends Component {
   render() {
-  return <>
+    return (
+      <div className="home-page">
         <MainPage />
-        <Projects />
+        <Project />
         <Footer />
-        </>
-    
-}
+      </div>
+    );
+  }
 }

@@ -10,6 +10,10 @@ export default class ProductPage extends Component {
   return (
     <Provider store={store}>
       <div className="grid-container">
+        <h1>
+          You can choose your favorite stones and get quote on each of them{" "}
+        </h1>
+
         <main>
           <div className="content">
             <div className="main">

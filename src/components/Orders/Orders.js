@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {fetchOrders} from '../../actions/orderActions';
 import "./Orders.css";
- class Orders extends Component {
+
+class Orders extends Component {
      componentDidMount() {
          this.props.fetchOrders();
      }
