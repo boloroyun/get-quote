@@ -1,133 +1,114 @@
   {
-    "projects": [
+    "services": [
     {
-     "_id": "pro1", 
-     "path": "/projects",    
-     "src": "project-img/bath1.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser1", 
+     "src": "img/background.jpg",
+     "description": "Installation",
+     "price": 5,
+     "priceDetail": "(per sq ft)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
     {
-     "_id": "pro2",
-     "path": "/projects",    
-     "src": "project-img/bath2.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser2", 
+     "src": "img/background.jpg",
+     "description": "Old countertop removal",
+     "price": 500,
+     "priceDetail": "(up to 50 sq ft)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
             {
-     "_id": "pro3",     
-     "path": "/projects",    
-     "src": "project-img/bath3.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser3", 
+     "src": "img/background.jpg",
+     "description": "Old countertop removal",
+     "price": 800,
+     "priceDetail": "(over 50 sq ft)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
     {
-     "_id": "pro4",
-     "path": "/projects",    
-     "src": "project-img/bath4.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser4", 
+     "src": "img/background.jpg",
+     "description": "Crack repair",
+     "price": 400,
+     "priceDetail": "(per crack)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
         {
-     "_id": "pro5",  
-     "path": "/projects",       
-     "src": "project-img/kitchen.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser5", 
+     "src": "img/background.jpg",
+     "description": "Chip repair",
+     "price": 200,
+     "priceDetail": "(per chip)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
     {
-     "_id": "pro6",
-     "path": "/projects",    
-     "src": "project-img/kitchen1.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser6", 
+     "src": "img/background.jpg",
+     "description": "Seam repair",
+     "price": 300,
+     "priceDetail": "(per seam)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
         {
-     "_id": "pro7",     
-     "path": "/projects",    
-     "src": "project-img/kitchen2.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser7", 
+     "src": "img/background.jpg",
+     "description": "Extending cooktop cutout",
+     "price": 450,
+     "priceDetail": "(per cutout)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
     {
-     "_id": "pro8",
-     "path": "/projects",    
-     "src": "project-img/kitchen3.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser8", 
+     "src": "img/background.jpg",
+     "description": "Extending sink cutout",
+     "price": 750,
+     "priceDetail": "(per cutout)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
 {
-     "_id": "pro9",    
-     "path": "/projects",     
-     "src": "project-img/kitchen4.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser9", 
+     "src": "img/background.jpg",
+     "description": "Extending space of refrigetor or oven",
+     "price": 400,
+     "priceDetail": "(one side)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
     {
-     "_id": "pro10",
-     "path": "/projects",    
-     "src": "project-img/kitchen5.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser10", 
+     "src": "img/background.jpg",
+     "description": "Extending space of refrigetor or oven",
+     "price": 600,
+     "priceDetail": "(both sides)",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
             {
-     "_id": "pro11",  
-     "path": "/projects",       
-     "src": "project-img/kitchen6.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+     "_id": "ser11", 
+     "src": "img/background.jpg",
+     "description": "Other Services",
+     "price": 0,
+     "priceDetail": "",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     },
-    {
-     "_id": "pro12",
-     "path": "/projects",    
-     "src": "project-img/kitchen7.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
-
-    },
-        {
-     "_id": "pro13",     
-     "path": "/projects",    
-     "src": "project-img/kitchen8.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
-
-    },
-    {
-     "_id": "pro14",
-     "path": "/projects",    
-     "src": "project-img/bath1.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
-
-    },
-        {
-     "_id": "pro15",     
-     "path": "/projects",    
-     "src": "project-img/bath2.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
-
-    },
-    {
-     "_id": "pro16",
-     "path": "/projects",    
-     "src": "project-img/bath3.jpg",
-     "text": "Bathroom countertop",
-     "label": "Stone name and type"
+                {
+     "_id": "ser11", 
+     "src": "img/background.jpg",
+     "description": "Other Services",
+     "price": 0,
+     "priceDetail": "",
+     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
 
     }
+
     ]
 }
 

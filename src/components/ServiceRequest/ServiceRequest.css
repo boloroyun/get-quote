@@ -1,0 +1,37 @@
+.service-request{
+padding: 1rem;
+margin: 1rem;
+display: flex;
+}
+
+.service-request-header{
+border-bottom: 1px solid grey;
+font-size: 16px;
+}
+
+.requested-service-item{
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+.requested-service-item img{
+    width: 5rem;
+}
+
+.requested-service-item li{
+    display: flex;
+    font-size: 16px;
+}
+
+.requested-service-item li div{
+    padding: 0.5rem;
+}
+
+.requested-service-item li div:last-child{
+    flex: 1;
+}
+
+.right{
+    text-align: right;
+}

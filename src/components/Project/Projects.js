@@ -17,38 +17,38 @@ function Project(){
     return (
       <div className="projects">
         <Carousel>
-          
           <div>
             <img src={bath1} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
           <div>
             <img src={kitchen4} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
           <div>
             <img src={bath3} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
+
           <div>
             <img src={bath4} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
           <div>
             <img src={kitchen} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
           <div>
             <img src={kitchen5} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
           <div>
             <img src={kitchen2} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
           <div>
             <img src={kitchen8} alt="project-img" />
-            <h2>Stone type and name</h2>
+            <h2>Type: Granite, Name: Aaron</h2>
           </div>
         </Carousel>
       </div>
