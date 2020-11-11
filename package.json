@@ -12,6 +12,7 @@
     "mongoose": "^5.10.7",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
+    "react-datepicker": "^3.3.0",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",

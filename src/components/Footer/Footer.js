@@ -31,7 +31,7 @@ function Footer() {
             <div className="footer-links-items">
               <h2>About Us</h2>
               <Link to="/sugn-up">How it works</Link>
-              <Link to="/">Testimonials</Link>
+              <Link to="/">Testimonials </Link>
               <Link to="/">Careers</Link>
               <Link to="/">Investors</Link>
               <Link to="/">Terms of Service</Link>

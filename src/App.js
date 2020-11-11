@@ -15,7 +15,6 @@ class App extends Component {
   return (
     <Provider store={store}>
       <BrowserRouter>
-      <Navbar/>
         <Switch>  
           <Route path="/" exact component={HomePage} />
           <Route path="/products" component={ProductPage} />
