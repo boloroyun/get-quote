@@ -18,14 +18,18 @@ export default class MainPage extends Component {
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          <Link to="/products">Get Quote</Link>
+          <Link to="/products" className="link">
+            Get Quote
+          </Link>
         </Button>
         <Button
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
-          <Link to="/projects">Watch Projects</Link>
+          <Link to="/projects" className="link">
+            Watch Projects
+          </Link>
           <i className="far fa-play-circle" />
         </Button>
         <Button
@@ -33,7 +37,20 @@ export default class MainPage extends Component {
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          <Link to="/products">Service Request</Link>
+          <Link to="/services" className="link">
+            Service Request
+          </Link>
+        </Button>
+      </div>
+      <div>
+        <Button
+          className="btns"
+          buttonStyle="btn--outline"
+          buttonSize="btn--large"
+        >
+          <Link to="/services" className="link">
+            Why you should choose us?
+          </Link>
         </Button>
       </div>
     </div>
