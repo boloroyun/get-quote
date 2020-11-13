@@ -65,11 +65,12 @@ closeModal = () => {
               <div className="product-details" key={product._id}>
                 <img src={product.img} alt={product.name}></img>
                 <div className="product-details-description">
-                  <p>
+                  <h3>
                     <strong>{product.name}</strong>
-                  </p>
+                  </h3>
+                  <p>Stone Type: {product.section}</p>
                   <p>{product.description}</p>
-                  <p>Stone Type is {product.section}</p>
+
                   <div className="product-price">
                     <button
                       className="button primary"

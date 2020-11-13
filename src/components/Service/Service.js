@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import "./Service.css";
 import formatCurrency from "../../util"
+import Fade from "react-reveal/Fade";
+
 
 export default class Service extends Component {
     render() {
         return (
           <div>
+          <Fade left cascade>
             <ul className="services">
               {this.props.services.map((service) => (
                 <li key={service._id}>
@@ -26,6 +29,7 @@ export default class Service extends Component {
                 </li>
               ))}
             </ul>
+            </Fade>
           </div>
         );
     }

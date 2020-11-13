@@ -1,6 +1,7 @@
+
 .service-request{
-padding: 1rem;
-margin: 1rem;
+padding: 0.5rem;
+margin: 0.5rem;
 display: flex;
 }
 
@@ -25,7 +26,7 @@ font-size: 16px;
 }
 
 .requested-service-item li div{
-    padding: 0.5rem;
+    padding: 0.3rem;
 }
 
 .requested-service-item li div:last-child{
@@ -34,4 +35,16 @@ font-size: 16px;
 
 .right{
     text-align: right;
+}
+
+.service-request-form{
+margin-left: 100px;
+margin-right: 100px;
+top: 10px;
+bottom: 10px;
+}
+
+.ReactModal__Content .ReactModal__Content--after-open{
+    max-width: 1000px;
+    max-height: 450px;
 }
