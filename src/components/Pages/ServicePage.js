@@ -11,14 +11,25 @@ export default class ServicePage extends Component {
     super();
     this.state = {
       services: data.services,
-      requestedServices: [],
+      requestedServices: localStorage.getItem("requestedServices")
+        ? JSON.parse(localStorage.getItem("requestedServices"))
+        : [],
     };
   }
+
+  createServiceRequest = (order) => {
+    alert(" Need to save request for" + order.name);
+  };
+
   removeFromRequestedService = (service) => {
     const requestedServices = this.state.requestedServices.slice();
     this.setState({
       requestedServices: requestedServices.filter((x) => x._id !== service._id),
     });
+    localStorage.setItem(
+      "requestedServices",
+      JSON.stringify(requestedServices.filter((x) => x._id !== service._id))
+    );
   };
   sendServiceRequest = (service) => {
     const requestedServices = this.state.requestedServices.slice();
@@ -33,7 +44,12 @@ export default class ServicePage extends Component {
       requestedServices.push({ ...service, count: 1 });
     }
     this.setState({ requestedServices });
+    localStorage.setItem(
+      "requestedServices",
+      JSON.stringify(requestedServices)
+    );
   };
+
   render() {
     return (
       <div className="container">
@@ -53,6 +69,7 @@ export default class ServicePage extends Component {
               <ServiceRequest
                 requestedServices={this.state.requestedServices}
                 removeFromRequestedService={this.removeFromRequestedService}
+                createServiceRequest={this.createServiceRequest}
               />
             </div>
           </div>

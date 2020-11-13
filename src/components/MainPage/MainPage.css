@@ -22,7 +22,7 @@ video {
 
 .main-container > h1 {
     color: #fff;
-    font-size: 68px;
+    font-size: 58px;
     margin-top: -1px;
     text-align: center;
     text-shadow: 3px 3px green;
@@ -32,7 +32,7 @@ video {
     margin-top: 8px;
     color: #fff;
     text-shadow: 1px 1px green;
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
 }
@@ -42,16 +42,16 @@ video {
 } 
 
 .main-btns .btn {
-    margin: 6px;
+    margin: 5px;
 }
 
 .fa-play-circle {
-    margin-left: 4px;
+    margin-left: 2px;
 }
 
 a{
     text-decoration: none;
-    font-size: 24px;
+    font-size: 18px;
     color: #fff;
 }
 
