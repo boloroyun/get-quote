@@ -7,7 +7,6 @@
      "price": 5,
      "priceDetail": "(per sq ft)",
      "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
     },
     {
      "_id": "ser2", 
@@ -16,16 +15,14 @@
      "price": 500,
      "priceDetail": "(up to 50 sq ft)",
      "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
     },
-            {
+    {
      "_id": "ser3", 
      "src": "img/background.jpg",
      "description": "Old countertop removal",
      "price": 800,
      "priceDetail": "(over 50 sq ft)",
      "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
     },
     {
      "_id": "ser4", 
