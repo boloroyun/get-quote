@@ -13,8 +13,8 @@ export default class ServiceRequest extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
       email: "",
+      name: "",
       address: "",
       tel: "",
       details: "",
@@ -29,16 +29,16 @@ export default class ServiceRequest extends Component {
 
   createServiceRequest = (e) => {
     e.preventDefault();
-    const order = {
-      name: this.state.name,
+    const orderService = {
       email: this.state.email,
+      name: this.state.name,
       address: this.state.address,
       tel: this.state.tel,
       details: this.state.details,
       chooseDate: this.state.chooseDate,
       requestedServices: this.props.requestedServices,
     };
-    this.props.createServiceRequest(order);
+    this.props.createServiceRequest(orderService);
   };
 
   closeModal = () => {

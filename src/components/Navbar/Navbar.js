@@ -60,7 +60,8 @@ function Navbar() {
             </ul>
             {button && (
               <Button buttonStyle="btn--outline">
-                <Link to="/admin">Admin</Link>
+                <Link to="/adminProduct">Admin Product</Link>
+                <Link to="/adminService">Admin Service</Link>
               </Button>
             )}
           </div>
