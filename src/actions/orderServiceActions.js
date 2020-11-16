@@ -16,7 +16,7 @@ export const createOrderService = (orderService) => (dispatch) => {
     .then((res) => res.json())
     .then((data) => {
       dispatch({ type: CREATE_ORDERSERVICE, payload: data });
-      localStorage.clear("requestedServices");
+      localStorage.clear("serviceRequestItems");
       dispatch({ type: CLEAR_SERVICEREQUEST });
     });
 };

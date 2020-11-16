@@ -13,6 +13,7 @@ class WishList extends Component {
             flname: "",
             email: "",
             address: "",
+            tel:"",
             projectDetails: "",
             showCheckout: false,
         };
@@ -27,6 +28,7 @@ class WishList extends Component {
           flname: this.state.flname,
           email: this.state.email,
           address: this.state.address,
+          tel: this.state.tel,
           projectDetails: this.state.projectDetails,
           wishListItems: this.props.wishListItems,
         };
@@ -59,7 +61,7 @@ closeModal = () => {
                     <h3 className="success-message">
                       Your request has been sent
                     </h3>
-                    <h2>Order {order._id}</h2>
+                    <h2>Quote Request {order._id}</h2>
                     <ul>
                       <li>
                         <div>Name:</div>
@@ -73,6 +75,11 @@ closeModal = () => {
                         <div>Address:</div>
                         <div>{order.address}</div>
                       </li>
+                      <li>
+                        <div>Phone Number:</div>
+                        <div>{order.tel}</div>
+                      </li>
+
                       <li>
                         <div>Date:</div>
                         <div>{order.createdAt}</div>
@@ -168,6 +175,17 @@ closeModal = () => {
                                 onChange={this.handleInput}
                               ></input>
                             </li>
+                            <li>
+                              <label>Phone Number</label>
+                              <input
+                                name="tel"
+                                type="tel"
+                                country="US"
+                                required
+                                onChange={this.handleInput}
+                              />
+                            </li>
+
                             <li>
                               <label>Project Details</label>
                               <textarea

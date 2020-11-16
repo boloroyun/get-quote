@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchOrderServices } from "../../actions/orderServiceActions";
+import "./OrderServices.css";
 
 class OrderServices extends Component {
   componentDidMount() {
@@ -36,8 +39,8 @@ class OrderServices extends Component {
                 <td>{orderService.tel}</td>
                 <td>{orderService.details}</td>
                 <td>
-                  {orderService.requestedServices.map((item) => (
-                    <div>{item.name}</div>
+                  {orderService.serviceRequestItems.map((item) => (
+                    <div>{item.description}</div>
                   ))}
                 </td>
               </tr>
@@ -49,3 +52,11 @@ class OrderServices extends Component {
   }
 }
 
+export default connect(
+  (state) => ({
+    orderServices: state.orderService.orderServices,
+  }),
+  {
+    fetchOrderServices,
+  }
+)(OrderServices);

@@ -4,12 +4,15 @@ import "./ServiceRequest.css";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
+import { connect } from "react-redux";
+import { removeFromServiceRequest } from "../../actions/serviceRequestActions";
+import { createOrderService, clearOrderService } from "../../actions/orderServiceActions";
 
 
 
 
 
-export default class ServiceRequest extends Component {
+class ServiceRequest extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +30,7 @@ export default class ServiceRequest extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  createServiceRequest = (e) => {
+  createOrderService = (e) => {
     e.preventDefault();
     const orderService = {
       email: this.state.email,
@@ -36,9 +39,9 @@ export default class ServiceRequest extends Component {
       tel: this.state.tel,
       details: this.state.details,
       chooseDate: this.state.chooseDate,
-      requestedServices: this.props.requestedServices,
+      serviceRequestItems: this.props.serviceRequestItems,
     };
-    this.props.createServiceRequest(orderService);
+    this.props.createOrderService(orderService);
   };
 
   closeModal = () => {
@@ -46,23 +49,76 @@ export default class ServiceRequest extends Component {
   };
 
   render() {
-    const { requestedServices } = this.props;
+    const { serviceRequestItems, orderService } = this.props;
 
     return (
       <div>
-        {requestedServices.length === 0 ? (
+        {serviceRequestItems.length === 0 ? (
           <div className="service-request service-request-header">
             There is not any requested services
           </div>
         ) : (
           <div className="service-request service-request-header">
-            You have {requestedServices.length} requested services in your list.
+            You have {serviceRequestItems.length} requested services in your
+            list.
           </div>
         )}
+
+        {orderService && (
+          <Modal isOpen={true} onRequestClose={this.closeModal}>
+            <Zoom>
+              <button className="close-modal" onClick={this.closeModal}>
+                x
+              </button>
+              <div className="order-service-details">
+                <h3 className="success-message">Your request has been sent</h3>
+                <h2>Order {orderService._id}</h2>
+                <ul>
+                  <li>
+                    <div>Email:</div>
+                    <div>{orderService.email}</div>
+                  </li>
+                  <li>
+                    <div>Name:</div>
+                    <div>{orderService.name}</div>
+                  </li>
+
+                  <li>
+                    <div>Address:</div>
+                    <div>{orderService.address}</div>
+                  </li>
+                  <li>
+                    <div>Phone number:</div>
+                    <div>{orderService.tel}</div>
+                  </li>
+
+                  <li>
+                    <div>Date:</div>
+                    <div>{orderService.createdAt}</div>
+                  </li>
+
+                  <li>
+                    <div>Requested Service Details:</div>
+                    <div>{orderService.details}</div>
+                  </li>
+                  <li>
+                    <div>Requested Services:</div>
+                    <div>
+                      {orderService.serviceRequestItems.map((y) => (
+                        <div>{y.description}</div>
+                      ))}
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </Zoom>
+          </Modal>
+        )}
+
         <div className="service-request">
           <Fade left cascade>
             <ul className="requested-service-item">
-              {requestedServices.map((item) => (
+              {serviceRequestItems.map((item) => (
                 <li key={item._id}>
                   <div>
                     <img src={item.src} alt={item.description}></img>
@@ -74,7 +130,7 @@ export default class ServiceRequest extends Component {
                       <button
                         className="button"
                         onClick={() =>
-                          this.props.removeFromRequestedService(item)
+                          this.props.removeFromServiceRequest(item)
                         }
                       >
                         Remove
@@ -86,7 +142,7 @@ export default class ServiceRequest extends Component {
             </ul>
           </Fade>
         </div>
-        {requestedServices.length !== 0 && (
+        {serviceRequestItems.length !== 0 && (
           <div>
             <div className="service-request">
               <div className="total">
@@ -108,7 +164,7 @@ export default class ServiceRequest extends Component {
                   </button>
                   <div className="service-request-form">
                     <h3>Service Request Form</h3>
-                    <form onSubmit={this.createServiceRequest}>
+                    <form onSubmit={this.createOrderService}>
                       <ul className="form-container">
                         <li>
                           <label>Email</label>
@@ -184,3 +240,11 @@ export default class ServiceRequest extends Component {
     );
   }
 }
+
+export default connect(
+  (state) => ({
+    orderService: state.orderService.orderService,
+    serviceRequestItems: state.serviceRequest.serviceRequestItems,
+  }),
+  { removeFromServiceRequest, createOrderService, clearOrderService }
+)(ServiceRequest);

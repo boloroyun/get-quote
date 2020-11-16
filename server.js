@@ -83,6 +83,7 @@ const Order = mongoose.model(
       email: String,
       flname: String,
       address: String,
+      tel: Number,
       projectDetails: String,
       wishListItems: [
         {
@@ -112,11 +113,10 @@ const OrderService = mongoose.model(
       tel: Number,
       projectDetails: String,
       chooseDate: Date,
-      requestedServices: [
+      serviceRequestItems: [
         {
           _id: String,
-          name: String,
-          count: Number,
+          description: String,
         },
       ],
     },
