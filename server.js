@@ -31,7 +31,6 @@ const Service = mongoose.model(
     description: String,
     price: Number,
     priceDetail: String,
-    technitions: [String],
   })
 );
 
@@ -117,6 +116,7 @@ const OrderService = mongoose.model(
         {
           _id: String,
           description: String,
+          price: Number,
         },
       ],
     },
@@ -149,7 +149,7 @@ const OrderService = mongoose.model(
         !req.body.tel ||
         !req.body.projectDetails ||
         !req.body.chooseDate ||
-        !req.body.requestedServices
+        !req.body.serviceRequestItems
       ) {
         return res.send({ message: "Data is required." });
       }

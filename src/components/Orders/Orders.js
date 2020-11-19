@@ -10,10 +10,10 @@ class Orders extends Component {
     render() {
 const {orders} = this.props;
         return !orders ? (
-          <div>Products to get Quote</div>
+          <div>Products and Services to get Quote</div>
         ) : (
           <div className="orders">
-            <h2>Products to get Quote</h2>
+            <h2>Products and Services to get Quote</h2>
             <table>
               <thead>
                 <tr>
@@ -22,6 +22,7 @@ const {orders} = this.props;
                   <th>EMAIL</th>
                   <th>NAME</th>
                   <th>ADDRESS</th>
+                  <th>PHONE NUMBER</th>
                   <th>PROJECT DETAILS</th>
                   <th>ITEMS</th>
                 </tr>
@@ -34,6 +35,7 @@ const {orders} = this.props;
                     <td>{order.flname}</td>
                     <td>{order.email}</td>
                     <td>{order.address}</td>
+                    <td>{order.tel}</td>
                     <td>{order.projectDetails}</td>
                     <td>
                       {order.wishListItems.map((item) => (

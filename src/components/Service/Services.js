@@ -6,7 +6,7 @@ import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
 import { connect } from 'react-redux';
 import {fetchServices} from "../../actions/serviceActions"
-import { sendServiceRequest } from "../../actions/serviceRequestActions";
+import { addToWishList } from "../../actions/wishListActions";
 
 
 class Services extends Component {
@@ -49,7 +49,7 @@ class Services extends Component {
                         {service.priceDetail}
                       </div>
                       <button
-                        onClick={() => this.props.sendServiceRequest(service)}
+                        onClick={() => this.props.addToWishList(service)}
                         className="button primary"
                       >
                         Send Service Request
@@ -80,7 +80,7 @@ class Services extends Component {
                     <button
                       className="button primary"
                       onClick={() => {
-                        this.props.sendServiceRequest(service);
+                        this.props.addToWishList(service);
                         this.closeModal();
                       }}
                     >
@@ -99,5 +99,5 @@ class Services extends Component {
 
 export default connect((state) => ({ services: state.services.items }), {
   fetchServices,
-  sendServiceRequest
+  addToWishList,
 })(Services);

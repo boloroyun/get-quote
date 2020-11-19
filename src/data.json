@@ -2,108 +2,111 @@
     "services": [
     {
      "_id": "ser1", 
-     "src": "img/background.jpg",
-     "description": "Installation",
+     "name": "Installation",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",
      "price": 5,
-     "priceDetail": "(per sq ft)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
+     "priceDetail": "(per sq ft)"
     },
     {
      "_id": "ser2", 
-     "src": "img/background.jpg",
-     "description": "Old countertop removal",
+     "name": "Old countertop removal",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 500,
-     "priceDetail": "(up to 50 sq ft)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
+     "priceDetail": "(up to 50 sq ft)"
     },
     {
      "_id": "ser3", 
-     "src": "img/background.jpg",
-     "description": "Old countertop removal",
+     "name": "Old countertop removal",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 800,
-     "priceDetail": "(over 50 sq ft)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
+     "priceDetail": "(over 50 sq ft)"
     },
     {
      "_id": "ser4", 
-     "src": "img/background.jpg",
-     "description": "Crack repair",
+     "name": "Crack repair",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 400,
-     "priceDetail": "(per crack)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "(per crack)"
     },
         {
      "_id": "ser5", 
-     "src": "img/background.jpg",
-     "description": "Chip repair",
+     "name": "Chip repair",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 200,
-     "priceDetail": "(per chip)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "(per chip)"
     },
     {
      "_id": "ser6", 
-     "src": "img/background.jpg",
-     "description": "Seam repair",
+     "name": "Seam repair",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 300,
-     "priceDetail": "(per seam)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "(per seam)"
     },
         {
      "_id": "ser7", 
-     "src": "img/background.jpg",
-     "description": "Extending cooktop cutout",
+     "name": "Extending cooktop cutout",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 450,
-     "priceDetail": "(per cutout)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "(per cutout)"
     },
     {
      "_id": "ser8", 
-     "src": "img/background.jpg",
-     "description": "Extending sink cutout",
+     "name": "Extending sink cutout",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 750,
-     "priceDetail": "(per cutout)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "(per cutout)"
     },
 {
      "_id": "ser9", 
-     "src": "img/background.jpg",
-     "description": "Extending space of refrigetor or oven",
+     "name": "Extending space of refrigetor or oven",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 400,
-     "priceDetail": "(one side)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "(one side)"
     },
     {
      "_id": "ser10", 
-     "src": "img/background.jpg",
-     "description": "Extending space of refrigetor or oven",
+     "name": "Extending space of refrigetor or oven",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 600,
-     "priceDetail": "(both sides)",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "(both sides)"
     },
             {
      "_id": "ser11", 
-     "src": "img/background.jpg",
-     "description": "Other Services",
+     "name": "Other Services",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 0,
-     "priceDetail": "",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "some"
     },
                 {
      "_id": "ser12", 
-     "src": "img/background.jpg",
-     "description": "Other Services",
+     "name": "Other Services",
+     "img": "img/background.jpg",
+     "description": "this product is from Brazil and best quality",
+     "section": "Service",     
      "price": 0,
-     "priceDetail": "",
-     "technitions": ["Chandmani-Erdene", "Amartuvshin"]
-
+     "priceDetail": "some"
     }
 
     ]

@@ -37,6 +37,7 @@ class WishList extends Component {
 closeModal = () => {
   this.props.clearOrder();
 }
+
     render() {
         const { wishListItems, order } = this.props;
         return (
@@ -61,7 +62,7 @@ closeModal = () => {
                     <h3 className="success-message">
                       Your request has been sent
                     </h3>
-                    <h2>Quote Request {order._id}</h2>
+                    <h2>Quote Request Number {order._id}</h2>
                     <ul>
                       <li>
                         <div>Name:</div>
