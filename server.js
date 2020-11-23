@@ -20,6 +20,7 @@ const Product = mongoose.model(
     description: String,
     section: String,
     price: Number,
+    priceDetail: String,
   })
 );
 
@@ -27,8 +28,10 @@ const Service = mongoose.model(
   "services",
   new mongoose.Schema({
     _id: { type: String, default: shortid.generate },
-    src: String,
+    name: String,
+    img: String,
     description: String,
+    section: String,
     price: Number,
     priceDetail: String,
   })
@@ -98,33 +101,6 @@ const Order = mongoose.model(
   )
 );
 
-const OrderService = mongoose.model(
-  "orderService",
-  new mongoose.Schema(
-    {
-      _id: {
-        type: String,
-        default: shortid.generate,
-      },
-      email: String,
-      name: String,
-      address: String,
-      tel: Number,
-      projectDetails: String,
-      chooseDate: Date,
-      serviceRequestItems: [
-        {
-          _id: String,
-          description: String,
-          price: Number,
-        },
-      ],
-    },
-    {
-      timestamps: true,
-    }
-  )
-);
 
 
   app.post ("/api/orders", async(req, res) => {
@@ -132,6 +108,7 @@ const OrderService = mongoose.model(
       !req.body.flname ||
       !req.body.email ||
       !req.body.address ||
+      !req.body.tel ||
       !req.body.projectDetails ||
       !req.body.wishListItems 
     ) {
@@ -141,32 +118,12 @@ const OrderService = mongoose.model(
     res.send(order);
   });
 
-    app.post("/api/orderServices", async (req, res) => {
-      if (
-        !req.body.email ||
-        !req.body.name ||
-        !req.body.address ||
-        !req.body.tel ||
-        !req.body.projectDetails ||
-        !req.body.chooseDate ||
-        !req.body.serviceRequestItems
-      ) {
-        return res.send({ message: "Data is required." });
-      }
-      const orderService = await OrderService(req.body).save();
-      res.send(orderService);
-    });
-
 
   app.get("/api/orders", async(req, res) => {
     const orders = await Order.find({});
     res.send(orders);
   });
 
-  app.get("/api/orderServices", async (req, res) => {
-    const orderServices = await OrderService.find({});
-    res.send(orderServices);
-  });
 
 
   app.delete("/api/orders/:id", async (req, res) => {
@@ -174,10 +131,6 @@ const OrderService = mongoose.model(
     res.send(order);
   });
 
-    app.delete("/api/orderServices/:id", async (req, res) => {
-      const orderService = await OrderService.findByIdAndDelete(req.params.id);
-      res.send(orderService);
-    });
 
 
 const port = process.env.PORT || 5000;

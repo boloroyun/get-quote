@@ -307,20 +307,6 @@ grid-template-areas:
  margin-top: 88px;
 }
 
-.ser-content{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.ser-main{
-  flex: 3 60rem;
-}
-
-.ser-sidebar{
-  flex: 1 20rem;
-  text-align: center;
-  font-size: 24px;
-}
 
 .admin-page{
   margin-top: 80px;

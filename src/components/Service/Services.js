@@ -40,8 +40,8 @@ class Services extends Component {
                 <li key={service._id}>
                   <div className="service">
                     <a href={"#" + service._id}>
-                      <p>{service.description}</p>
-                      <img src={service.src} alt={service.description}></img>
+                      <p>{service.name}</p>
+                      <img src={service.img} alt={service.name}></img>
                     </a>
                     <div className="service-price">
                       <div>
@@ -68,10 +68,10 @@ class Services extends Component {
                 X
               </button>
               <div className="service-details" key={service._id}>
-                <img src={service.src} alt={service.description}></img>
+                <img src={service.img} alt={service.name}></img>
                 <div className="service-details-description">
                   <h3>
-                    <strong>{service.description}</strong>
+                    <strong>{service.name}</strong>
                   </h3>
                   <p>Stone Type:</p>
                   <p>{service.description}</p>

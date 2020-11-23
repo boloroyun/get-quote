@@ -19,11 +19,11 @@ export default class ServicePage extends Component {
             <a href="/services">Service request application</a>
           </header>
           <main>
-            <div className="ser-content">
-              <div className="ser-main">
+            <div className="content">
+              <div className="main">
                 <Service></Service>
               </div>
-              <div className="ser-sidebar">
+              <div className="sidebar">
                 <WishList />
               </div>
             </div>
